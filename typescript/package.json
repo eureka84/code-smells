@@ -1,0 +1,72 @@
+{
+  "name": "ts-kata",
+  "version": "1.0.0",
+  "description": "Typescript kata starting project",
+  "author": "Pedro Moreira Santos",
+  "homepage": "https://github.com/pedromsantos/ts-kata",
+  "keywords": [
+    "kata",
+    "dojo",
+    "code",
+    "practice",
+    "tdd"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "precommit": "npm-run-all -p lint types test build",
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint . --cache --cache-location ./node_modules/.cache/eslint --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "types": "type-coverage -at-least 99",
+    "types-report": "typescript-coverage-report --threshold 99",
+    "test": "jest --watchAll=false",
+    "watch": "jest --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@commitlint/format": "^18.4.3",
+    "@stryker-mutator/core": "^7.3.0",
+    "@stryker-mutator/jest-runner": "^7.3.0",
+    "@stryker-mutator/typescript-checker": "^7.3.0",
+    "@types/jest": "^29.5.10",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jest": "^27.6.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-sonarjs": "^0.23.0",
+    "fast-check": "^3.14.0",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "jest-extended-snapshot": "^1.1.5",
+    "npm-run-all": "^4.1.5",
+    "openapi-typescript": "^6.7.2",
+    "prettier": "^3.0.3",
+    "ts-coverage": "^0.1.5",
+    "ts-jest": "^29.1.1",
+    "type-coverage": "^2.27.0",
+    "typescript": "^5.3.2",
+    "typescript-coverage-report": "^0.8.0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "formatter": "@commitlint/format",
+    "rules": {
+      "subject-case": [
+        2,
+        "never",
+        [
+          "start-case",
+          "pascal-case"
+        ]
+      ]
+    }
+  }
+}
